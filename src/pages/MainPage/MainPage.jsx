@@ -1,4 +1,10 @@
+import ModificationCard from "../../components/ModificationCard/ModificationCard";
+import ServerCard from "../../components/ServerCard/ServerCard";
+
 function MainPage() {
+
+    const items = [1, 2, 3, 4];
+
     return <>
         <header>
             <h2>FutureTech Minecraft Portal</h2>
@@ -18,6 +24,16 @@ function MainPage() {
                     <button>Начать играть</button>
                     <button>Серверы</button>
                 </div> 
+            </div>
+            <div className="servers">
+                {
+                    items.map((_) => (<ServerCard key={_}/>))
+                }
+            </div>
+            <div className="modifications">
+                {
+                    items.map((_) => (<ModificationCard key={_}/>))
+                }
             </div>
         </main>
         <footer>
