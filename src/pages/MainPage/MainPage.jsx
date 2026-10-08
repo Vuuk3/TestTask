@@ -1,5 +1,7 @@
+import { Link } from "react-router";
 import ModificationCard from "../../components/ModificationCard/ModificationCard";
 import ServerCard from "../../components/ServerCard/ServerCard";
+import modules from "./MainPage.module.css";
 
 function MainPage() {
 
@@ -10,14 +12,14 @@ function MainPage() {
             <h2>FutureTech Minecraft Portal</h2>
         </header>
         <main>
-            <nav>
-                <li>Главная</li>
-                <li>Серверы</li>
-                <li>Модификации</li>
-                <li>Друзья</li>
+            <nav className={modules.navigation}>
+                <Link>Главная</Link>
+                <Link to="/servers">Серверы</Link>
+                <Link>Модификации</Link>
+                <Link>Друзья</Link>
             </nav>
             <div>
-                <h1>ТВОЙ МИР.</h1>
+                <h1>ТВОЙ МИР</h1>
                 <h1>ТВОЯ ЭКОСИСТЕМА</h1>
                 <h3>Все в одном интерфейсе FutureTech</h3>
                 <div>
@@ -25,12 +27,12 @@ function MainPage() {
                     <button>Серверы</button>
                 </div> 
             </div>
-            <div className="servers">
+            <div className={modules.servers}>
                 {
                     items.map((_) => (<ServerCard key={_}/>))
                 }
             </div>
-            <div className="modifications">
+            <div className={modules.modifications}>
                 {
                     items.map((_) => (<ModificationCard key={_}/>))
                 }
