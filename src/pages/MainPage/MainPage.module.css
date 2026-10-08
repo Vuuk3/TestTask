@@ -1,0 +1,12 @@
+.navigation {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  list-style: none;
+}
+
+.servers, .modifications {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}

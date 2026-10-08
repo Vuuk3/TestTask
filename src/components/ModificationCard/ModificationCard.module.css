@@ -1,0 +1,9 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.card-info {
+  list-style: none;
+}
