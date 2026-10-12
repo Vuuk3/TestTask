@@ -12,12 +12,12 @@ function ServerCard() {
   }
 
   return (<div className={modules.card}>
-    <h1 className="card-header">{data.name}</h1>
+    <h1 className={modules["card-header"]}>{data.name}</h1>
     <div className={modules["card-info"]}>
-      <li className="status">{data.status}</li>
-      <li className="players">{data.players}/{data.max_players}</li>
-      <li className="version">Minecraft {data.version}</li>
-      <button className="more">Подробнее</button>
+      <li className={modules.status}>{data.status}</li>
+      <li className={modules.players}>{data.players} / {data.max_players}</li>
+      <li className={modules.version}>Minecraft {data.version}</li>
+      <button className={modules.more}>Подробнее</button>
     </div>
   </div>)
 }

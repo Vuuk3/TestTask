@@ -10,6 +10,7 @@ function Menu() {
     { text: "Друзья", url: "/friends" }
   ]
   const location = useLocation();
+
   return (<>
     <nav className={modules.navigation}>
       {pages.map((p) => (
