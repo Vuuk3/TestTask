@@ -1,0 +1,29 @@
+.navigation {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  list-style: none;
+}
+
+.link {
+  border: transparent 1px solid;
+  text-decoration: none;
+  color: black;
+  padding: 5px;
+}
+
+.link:hover {
+  border: black 1px solid;
+  border-radius: 10px;
+}
+
+.checked {
+  pointer-events: none;
+  cursor: not-allowed;
+  color: gray;
+}
+
+.checked:hover {
+  cursor: not-allowed;
+}
+
