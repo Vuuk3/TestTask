@@ -12,14 +12,17 @@ function ModificationCard () {
   }
 
   return <div className={modules.card}>
-    <div className="card-headers">
-      <h1 className="card-headers-h1">{data.name}</h1>
-      <h2 className="card-headers-h2">{data.category}</h2>
+    <div className={modules["card-head"]}>
+      <img className={modules["card-icon"]}/>
+      <div className={modules["card-headers"]}>
+        <h1 className={modules["card-headers-h1"]}>{data.name}</h1>
+        <h2 className={modules["card-headers-h2"]}>{data.category}</h2>
+      </div>
     </div>
     <div className={modules["card-info"]}>
-      <li className="version">{data.minecraft_version}</li>
-      <li className="downloads">{data.downloads} загрузок</li>
-      <button className="more">Подробнее</button>
+      <li className={modules.version}>{data.minecraft_version}</li>
+      <li className={modules.downloads}>{data.downloads.toLocaleString("en-US", {notation: "compact", roundingMode: "trunc", maximumFractionDigits: 1})} загрузок</li>
+      <button className={modules.more}>Подробнее</button>
     </div>
   </div>
 }

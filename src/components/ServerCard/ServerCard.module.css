@@ -2,13 +2,16 @@
   display: flex;
   flex-direction: column;
   text-align: center;
-  background-color: #18222E;
+  background-color: #111821;
   padding: 10px;
   border-radius: 10px;
 }
 
 .card-header {
   color: #F4F7FA;
+  background-color: #18222E;
+  border: 1px solid #263241;
+  border-radius: 5px;
   font-size: 24px;
   margin: 0;
   font-weight: 800;
@@ -22,15 +25,42 @@
   gap: 5px;
 }
 
-.status, .players, .version {
-  color: white;
+.players {
+  color: #F4F7FA;
+  justify-self: end;
+  padding-right: 10px;
+}
+
+.version {
+  color: #97A6B5;
 }
 
 .status {
-  border: 1px solid white;
-  border-radius: 5px;
+  border: 1px solid transparent;
+  padding: 0;
+  border-radius: 8px;
+}
+
+.online {
+  color: #63F59A;
+  border-color: #63F59A;
+}
+
+.offline {
+  color: #FF6577;
+  border-color: #FF6577;
 }
 
 .more {
-  grid-row: 3/4 ;
+  grid-row: 3/4;
+  padding: 0;
+  text-align: start;
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: #4CC9FF;
+}
+
+.more:hover {
+  cursor: pointer;
 }

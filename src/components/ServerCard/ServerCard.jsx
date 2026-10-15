@@ -3,7 +3,7 @@ import modules from "./ServerCard.module.css";
 function ServerCard() {
   const data = {
     "name": "Test",
-    "status": "Oneline",
+    "status": false,
     "players": 66,
     "max_players": 100,
     "version": "1.20.1",
@@ -14,7 +14,7 @@ function ServerCard() {
   return (<div className={modules.card}>
     <h1 className={modules["card-header"]}>{data.name}</h1>
     <div className={modules["card-info"]}>
-      <li className={modules.status}>{data.status}</li>
+      <li className={`${modules.status} ${data.status ? modules.online : modules.offline}`}>{data.status ? "ONLINE" : "OFFLINE"}</li>
       <li className={modules.players}>{data.players} / {data.max_players}</li>
       <li className={modules.version}>Minecraft {data.version}</li>
       <button className={modules.more}>Подробнее</button>

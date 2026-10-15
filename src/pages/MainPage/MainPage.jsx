@@ -8,18 +8,15 @@ function MainPage() {
   const items = [1, 2, 3, 4];
 
   return <>
-    <header>
-      <h2>FutureTech Minecraft Portal</h2>
-    </header>
     <main>
       <Menu/>
-      <div>
-        <h1>ТВОЙ МИР</h1>
-        <h1>ТВОЯ ЭКОСИСТЕМА</h1>
-        <h3>Все в одном интерфейсе FutureTech</h3>
-        <div>
-          <button>Начать играть</button>
-          <button>Серверы</button>
+      <div className={modules["start_block"]}>
+        <h1 className={modules["start_block-header-first"]}>ТВОЙ МИР</h1>
+        <h1 className={modules["start_block-header-second"]}>ТВОЯ ЭКОСИСТЕМА</h1>
+        <h3 className={modules["start_block-description"]}>Все в одном интерфейсе FutureTech</h3>
+        <div className={modules["button_container"]}>
+          <button className={modules["main_button"]}>Начать играть</button>
+          <button className={modules["secondary_button"]}>Серверы</button>
         </div> 
       </div>
       <div className={modules.servers}>
@@ -33,9 +30,6 @@ function MainPage() {
         }
       </div>
     </main>
-    <footer>
-      <li>Наши контакты</li>
-    </footer>
   </>
 }
 
