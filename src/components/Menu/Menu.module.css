@@ -32,11 +32,27 @@
 }
 
 .link {
+  position: relative;
   font-size: 20px;
   border: transparent 1px solid;
   text-decoration: none;
   color: #97A6B5;
   padding: 5px;
+}
+
+.link:after {
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #97A6B5;
+  content: "";
+  transition: width 0.3s ease-out;
+}
+
+.link:hover:after {
+  width: 100%;
 }
 
 .checked {

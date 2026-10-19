@@ -63,6 +63,8 @@
 
 .more {
   grid-row: 3/4;
+  width: fit-content;
+  position: relative;
   padding: 0;
   text-align: start;
   background: none;
@@ -71,6 +73,21 @@
   color: #4CC9FF;
 }
 
+.more:after {
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #4CC9FF;
+  content: "";
+  transition: width 0.3s ease-out;
+}
+
 .more:hover {
   cursor: pointer;
+}
+
+.more:hover:after {
+  width: 100%;
 }

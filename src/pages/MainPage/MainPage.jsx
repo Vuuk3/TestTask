@@ -9,7 +9,7 @@ function MainPage() {
 
   return <>
     <main>
-      <Menu/>
+      <Menu />
       <div className={modules["start_block"]}>
         <h1 className={modules["start_block-header-first"]}>ТВОЙ МИР</h1>
         <h1 className={modules["start_block-header-second"]}>ТВОЯ ЭКОСИСТЕМА</h1>
@@ -17,17 +17,23 @@ function MainPage() {
         <div className={modules["button_container"]}>
           <button className={modules["main_button"]}>Начать играть</button>
           <button className={modules["secondary_button"]}>Серверы</button>
-        </div> 
+        </div>
       </div>
       <div className={modules.servers}>
-        {
-          items.map((_) => (<ServerCard key={_}/>))
-        }
+        <h1 className={modules["servers-h1"]}>Наши серверы</h1>
+        <div className={modules["servers-content"]}>
+          {
+            items.slice(0, 3).map((_) => (<ServerCard key={_} />))
+          }
+        </div>
       </div>
       <div className={modules.modifications}>
-        {
-          items.map((_) => (<ModificationCard key={_}/>))
-        }
+        <h1 className={modules["modifications-h1"]}>Наши модификации</h1>
+        <div className={modules["modifications-content"]}>
+          {
+            items.map((_) => (<ModificationCard key={_} />))
+          }
+        </div>
       </div>
     </main>
   </>

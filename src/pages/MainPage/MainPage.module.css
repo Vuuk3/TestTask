@@ -57,12 +57,35 @@ body {
   background-color: #63F59A;
 }
 
+.main_button:hover {
+  background-color: #54D083;
+}
+
+.main_button:active {
+  background-color: #45AC6C;
+}
+
 .secondary_button {
   color: #F4F7FA;
   background-color: #18222E;
 }
 
-.servers, .modifications {
+.secondary_button:hover {
+  background-color: #141D27;
+}
+
+.secondary_button:active {
+  background-color: #111820;
+}
+
+.servers-h1, .modifications-h1 {
+  color: #F4F7FA;
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.servers-content, .modifications-content {
   display: flex;
   flex-direction: row;
   gap: 20px;
