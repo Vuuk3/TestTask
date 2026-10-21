@@ -1,45 +1,42 @@
 import ModificationCard from "../../components/ModificationCard/ModificationCard";
 import ServerCard from "../../components/ServerCard/ServerCard";
+import Menu from "../../components/Menu/Menu";
+import modules from "./MainPage.module.css";
 
 function MainPage() {
 
-    const items = [1, 2, 3, 4];
+  const items = [1, 2, 3, 4];
 
-    return <>
-        <header>
-            <h2>FutureTech Minecraft Portal</h2>
-        </header>
-        <main>
-            <nav>
-                <li>Главная</li>
-                <li>Серверы</li>
-                <li>Модификации</li>
-                <li>Друзья</li>
-            </nav>
-            <div>
-                <h1>ТВОЙ МИР.</h1>
-                <h1>ТВОЯ ЭКОСИСТЕМА</h1>
-                <h3>Все в одном интерфейсе FutureTech</h3>
-                <div>
-                    <button>Начать играть</button>
-                    <button>Серверы</button>
-                </div> 
-            </div>
-            <div className="servers">
-                {
-                    items.map((_) => (<ServerCard key={_}/>))
-                }
-            </div>
-            <div className="modifications">
-                {
-                    items.map((_) => (<ModificationCard key={_}/>))
-                }
-            </div>
-        </main>
-        <footer>
-            <li>Наши контакты</li>
-        </footer>
-    </>
+  return <>
+    <main>
+      <Menu />
+      <div className={modules["start_block"]}>
+        <h1 className={modules["start_block-header-first"]}>ТВОЙ МИР</h1>
+        <h1 className={modules["start_block-header-second"]}>ТВОЯ ЭКОСИСТЕМА</h1>
+        <h3 className={modules["start_block-description"]}>Все в одном интерфейсе FutureTech</h3>
+        <div className={modules["button_container"]}>
+          <button className={modules["main_button"]}>Начать играть</button>
+          <button className={modules["secondary_button"]}>Серверы</button>
+        </div>
+      </div>
+      <div className={modules.servers}>
+        <h1 className={modules["servers-h1"]}>Наши серверы</h1>
+        <div className={modules["servers-content"]}>
+          {
+            items.slice(0, 3).map((_) => (<ServerCard key={_} />))
+          }
+        </div>
+      </div>
+      <div className={modules.modifications}>
+        <h1 className={modules["modifications-h1"]}>Наши модификации</h1>
+        <div className={modules["modifications-content"]}>
+          {
+            items.map((_) => (<ModificationCard key={_} />))
+          }
+        </div>
+      </div>
+    </main>
+  </>
 }
 
 export default MainPage;
