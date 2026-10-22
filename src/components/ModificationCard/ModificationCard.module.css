@@ -2,9 +2,9 @@
   display: flex;
   flex-direction: column;
   text-align: center;
-  background-color: #111821;
+  background-color: var(--color-surface);
   padding: 10px;
-  border-radius: 10px;
+  border-radius: var(--card-border-radius);
 }
 
 .card-head {
@@ -18,8 +18,8 @@
 .card-icon {
   width: 45px;
   height: 45px;
-  border-radius: 10px;
-  background-color: gray;
+  border-radius: var(--card-border-radius);
+  background-color: var(--color-placeholder);
   border: 1px solid transparent;
 }
 
@@ -31,14 +31,14 @@
 }
 
 .card-headers-h1 {
-  color: #F4F7FA;
+  color: var(--color-text-primary);
   font-size: 24px;
   margin: 0;
   font-weight: 800;
 }
 
 .card-headers-h2 {
-  color: #97A6B5;
+  color: var(--color-text-secondary);
   font-size: 16px;
   margin: 0;
   font-weight: 800;
@@ -54,7 +54,7 @@
 
 .downloads,
 .version {
-  color: #97A6B5;
+  color: var(--color-text-secondary);
 }
 
 .version {
@@ -70,7 +70,7 @@
   background: none;
   border: none;
   font-size: 16px;
-  color: #4CC9FF;
+  color: var(--color-info);
 }
 
 .more:after {
@@ -79,9 +79,9 @@
   left: 0;
   width: 0;
   height: 2px;
-  background-color: #4CC9FF;
+  background-color: var(--color-info);
   content: "";
-  transition: width 0.3s ease-out;
+  transition: width var(--transition-duration) ease-out;
 }
 
 .more:hover {
