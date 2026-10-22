@@ -1,3 +1,37 @@
+:root {
+  --color-background: #090d12;
+  --color-surface: #111821;
+  --color-surface-secondary: #18222e;
+  --color-border: #263241;
+  --color-accent: #63f59a;
+  --color-info: #4cc9ff;
+  --color-warning: #ffc857;
+  --color-error: #ff6577;
+  --color-text-primary: #f4f7fa;
+  --color-text-secondary: #97a6b5;
+
+  --color-accent-hover: #54d083;
+  --color-accent-active: #45ac6c;
+  --color-surface-hover: #141d27;
+  --color-surface-active: #111820;
+  --color-placeholder: gray;
+
+  --font-family-primary: "Inter", sans-serif;
+  --content-max-width: 1280px;
+  --grid-columns: 12;
+  --space-unit: 8px;
+  --space-1: 8px;
+  --space-1-5: 12px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-6: 48px;
+  --card-border-radius: 10px;
+  --button-height: 44px;
+  --mobile-breakpoint: 768px;
+  --transition-duration: 0.3s;
+}
+
 body {
-  font-family: "Inter", sans-serif;
+  font-family: var(--font-family-primary);
 }
