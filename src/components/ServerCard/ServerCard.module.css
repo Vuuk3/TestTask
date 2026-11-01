@@ -15,11 +15,10 @@
   border-radius: 5px;
   font-size: 24px;
   margin: 0;
-  font-weight: 800;
+  font-weight: 750;
 }
 
 .description {
-  min-height: 48px;
   margin-bottom: 0;
   color: var(--color-text-secondary);
   text-align: left;
@@ -36,12 +35,18 @@
 .players {
   color: var(--color-text-primary);
   justify-self: end;
+  align-self: center;
   padding-right: 10px;
 }
 
 .version {
   color: var(--color-text-secondary);
   justify-self: start;
+}
+
+.ip {
+  color: var(--color-text-secondary);
+  justify-self: end;
 }
 
 .status {

@@ -1,6 +1,6 @@
 import modules from "./ServerCard.module.css";
 
-function ServerCard({ data }) {
+function ServerCard({ data, extended = false }) {
   const server = data || {
     "name": "Test",
     "status": false,
@@ -14,11 +14,12 @@ function ServerCard({ data }) {
 
   return (<div className={modules.card}>
     <h1 className={modules["card-header"]}>{server.name}</h1>
-    <p className={modules.description}>{server.description}</p>
+    {extended && <p className={modules.description}>{server.description}</p>}
     <div className={modules["card-info"]}>
       <li className={`${modules.status} ${server.status ? modules.online : modules.offline}`}>{server.status ? "ONLINE" : "OFFLINE"}</li>
       <li className={modules.players}>{server.status ? server.players: 0} / {server.max_players}</li>
       <li className={modules.version}>Minecraft {server.version}</li>
+      {extended && <li className={modules.ip}>{server.ip}</li>}
       <button className={modules.more}>Подробнее</button>
     </div>
   </div>)
