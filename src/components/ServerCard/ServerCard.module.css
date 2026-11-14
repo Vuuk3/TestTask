@@ -1,5 +1,4 @@
 .card {
-  width: 30%;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -10,9 +9,6 @@
 
 .card-header {
   color: var(--color-text-primary);
-  background-color: var(--color-surface-secondary);
-  border: 1px solid var(--color-border);
-  border-radius: 5px;
   font-size: 24px;
   margin: 0;
   font-weight: 750;
@@ -76,6 +72,7 @@
   border: none;
   font-size: 16px;
   color: var(--color-info);
+  text-decoration: none;
 }
 
 .more:after {

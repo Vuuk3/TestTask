@@ -27,74 +27,18 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-1);
-  min-width: 0;
-  margin: 0;
-  padding: 0;
-  border: none;
 }
 
 .filter-h2 {
   margin: 0;
-  padding: 0;
   color: var(--color-text-secondary);
   font-size: 14px;
   font-weight: 700;
 }
 
-.filter-options {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-1);
-}
-
-.filter-option {
-  position: relative;
-  cursor: pointer;
-}
-
-.filter-option input {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  opacity: 0;
-}
-
-.filter-option span {
-  display: flex;
-  align-items: center;
-  padding: var(--space-1);
-  color: var(--color-text-secondary);
-  background-color: var(--color-surface-secondary);
-  border: 1px solid var(--color-border);
-  border-radius: 6px;
-  transition: color var(--transition-duration), background-color var(--transition-duration), border-color var(--transition-duration);
-}
-
-.filter-option input:checked + span {
-  color: var(--color-background);
-  background-color: var(--color-accent);
-  border-color: var(--color-accent);
-}
-
-.filter-option input:focus-visible + span {
-  outline: 2px solid var(--color-info);
-  outline-offset: 2px;
-}
-
-.filter-option:hover span {
-  color: var(--color-text-primary);
-  border-color: var(--color-text-secondary);
-}
-
-.filter-option:hover input:checked + span {
-  color: var(--color-background);
-  background-color: var(--color-accent-hover);
-  border-color: var(--color-accent-hover);
-}
-
 .servers-content {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 20px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
 }
