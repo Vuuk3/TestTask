@@ -9,8 +9,8 @@ function ServersPage() {
   const [statusFilter, setStatusFilter] = useState("all");
   const [sortOrder, setSortOrder] = useState("none");
 
-  const statusData = {"Все": "all", "Онлайн": "online", "Оффлайн": "offline"}
-  const orderData = {"Без сортировки": "none", "По убыванию": "desc", "По возрастанию": "asc"}
+  const statusData = {"all": "Все", "online": "Онлайн", "offline": "Оффлайн"}
+  const orderData = {"none": "Без сортировки", "desc": "По убыванию", "asc": "По возрастанию"}
 
   const filteredServers = servers.filter((server) => {
     if (statusFilter === "all") return true

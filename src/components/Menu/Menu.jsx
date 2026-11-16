@@ -6,7 +6,7 @@ function Menu() {
   const pages = [
     { text: "Главная", url: "/" },
     { text: "Серверы", url: "/servers" },
-    { text: "Модификации", url: "/modifications" },
+    { text: "Модификации", url: "/mods" },
     { text: "Друзья", url: "/friends" }
   ]
   const location = useLocation();
