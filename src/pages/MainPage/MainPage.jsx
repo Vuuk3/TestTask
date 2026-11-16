@@ -4,6 +4,7 @@ import Menu from "../../components/Menu/Menu";
 import servers from "../../data/servers.js";
 import modifications from "../../data/modifications.js";
 import modules from "./MainPage.module.css";
+import { Link } from "react-router";
 
 function MainPage() {
 
@@ -16,7 +17,7 @@ function MainPage() {
         <h3 className={modules["start_block-description"]}>Все в одном интерфейсе FutureTech</h3>
         <div className={modules["button_container"]}>
           <button className={modules["main_button"]}>Начать играть</button>
-          <button className={modules["secondary_button"]}>Серверы</button>
+          <Link className={modules["secondary_button"]} to="/servers">Серверы</Link>
         </div>
       </div>
       <div className={modules.servers}>

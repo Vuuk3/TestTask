@@ -40,6 +40,9 @@ body {
 }
 
 .main_button, .secondary_button {
+  display: flex;
+  text-decoration: none;
+  align-items: center;
   font-size: 16px;
   font-weight: 650;
   border: none;

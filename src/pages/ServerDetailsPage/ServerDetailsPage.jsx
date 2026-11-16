@@ -55,12 +55,10 @@ function ServerDetailsPage() {
       </div>
       <div className={modules.meta}>
         <div className={modules["meta-row"]}>
-          <span>Версия Minecraft</span>
-          <strong>{server.version}</strong>
+          <span>Версия Minecraft: <strong>{server.version}</strong></span>
         </div>
         <div className={modules["meta-row"]}>
-          <span>Онлайн</span>
-          <strong>{server.status ? server.players : 0} / {server.max_players}</strong>
+          <span>Онлайн: <strong>{server.status ? server.players : 0} / {server.max_players}</strong></span>
         </div>
       </div>
       <section className={modules.section}>
