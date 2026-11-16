@@ -1,11 +1,12 @@
 import ModificationCard from "../../components/ModificationCard/ModificationCard";
 import ServerCard from "../../components/ServerCard/ServerCard";
 import Menu from "../../components/Menu/Menu";
+import servers from "../../data/servers.js";
+import modifications from "../../data/modifications.js";
 import modules from "./MainPage.module.css";
+import { Link } from "react-router";
 
 function MainPage() {
-
-  const items = [1, 2, 3, 4];
 
   return <>
     <main>
@@ -16,14 +17,14 @@ function MainPage() {
         <h3 className={modules["start_block-description"]}>Все в одном интерфейсе FutureTech</h3>
         <div className={modules["button_container"]}>
           <button className={modules["main_button"]}>Начать играть</button>
-          <button className={modules["secondary_button"]}>Серверы</button>
+          <Link className={modules["secondary_button"]} to="/servers">Серверы</Link>
         </div>
       </div>
       <div className={modules.servers}>
         <h1 className={modules["servers-h1"]}>Наши серверы</h1>
         <div className={modules["servers-content"]}>
           {
-            items.slice(0, 3).map((_) => (<ServerCard key={_} />))
+            servers.slice(0, 3).map((server) => (<ServerCard key={server.id} data={server} />))
           }
         </div>
       </div>
@@ -31,7 +32,7 @@ function MainPage() {
         <h1 className={modules["modifications-h1"]}>Наши модификации</h1>
         <div className={modules["modifications-content"]}>
           {
-            items.map((_) => (<ModificationCard key={_} />))
+            modifications.slice(0, 4).map((modification) => (<ModificationCard key={modification.id} data={modification} />))
           }
         </div>
       </div>

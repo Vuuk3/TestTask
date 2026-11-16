@@ -1,0 +1,42 @@
+.select-wrapper {
+  position: relative;
+}
+
+.select-wrapper::after {
+  content: "▼";
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  color: var(--color-text-secondary);
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.filter {
+  appearance: none;
+  min-height: var(--button-height);
+  padding-right: 40px;
+  padding-left: var(--space-2);
+  color: var(--color-text-primary);
+  background-color: var(--color-surface-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  font: inherit;
+  cursor: pointer;
+  transition: color var(--transition-duration), border-color var(--transition-duration), background-color var(--transition-duration);
+}
+
+.filter:hover {
+  background-color: var(--color-surface-hover);
+  border-color: var(--color-text-secondary);
+}
+
+.filter:focus-visible {
+  outline: 2px solid var(--color-info);
+  outline-offset: 2px;
+}
+
+.filter option {
+  color: var(--color-text-primary);
+  background-color: var(--color-surface-secondary);
+}

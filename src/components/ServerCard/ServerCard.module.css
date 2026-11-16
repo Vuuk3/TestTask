@@ -1,21 +1,23 @@
 .card {
-  width: 30%;
   display: flex;
   flex-direction: column;
   text-align: center;
-  background-color: #111821;
+  background-color: var(--color-surface);
   padding: 10px;
-  border-radius: 10px;
+  border-radius: var(--card-border-radius);
 }
 
 .card-header {
-  color: #F4F7FA;
-  background-color: #18222E;
-  border: 1px solid #263241;
-  border-radius: 5px;
+  color: var(--color-text-primary);
   font-size: 24px;
   margin: 0;
-  font-weight: 800;
+  font-weight: 750;
+}
+
+.description {
+  margin-bottom: 0;
+  color: var(--color-text-secondary);
+  text-align: left;
 }
 
 .card-info {
@@ -27,14 +29,20 @@
 }
 
 .players {
-  color: #F4F7FA;
+  color: var(--color-text-primary);
   justify-self: end;
+  align-self: center;
   padding-right: 10px;
 }
 
 .version {
-  color: #97A6B5;
+  color: var(--color-text-secondary);
   justify-self: start;
+}
+
+.ip {
+  color: var(--color-text-secondary);
+  justify-self: end;
 }
 
 .status {
@@ -45,13 +53,13 @@
 }
 
 .online {
-  color: #63F59A;
-  border-color: #63F59A;
+  color: var(--color-accent);
+  border-color: var(--color-accent);
 }
 
 .offline {
-  color: #FF6577;
-  border-color: #FF6577;
+  color: var(--color-error);
+  border-color: var(--color-error);
 }
 
 .more {
@@ -63,7 +71,8 @@
   background: none;
   border: none;
   font-size: 16px;
-  color: #4CC9FF;
+  color: var(--color-info);
+  text-decoration: none;
 }
 
 .more:after {
@@ -72,9 +81,9 @@
   left: 0;
   width: 0;
   height: 2px;
-  background-color: #4CC9FF;
+  background-color: var(--color-info);
   content: "";
-  transition: width 0.3s ease-out;
+  transition: width var(--transition-duration) ease-out;
 }
 
 .more:hover {

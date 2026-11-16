@@ -1,0 +1,44 @@
+.servers-page {
+  width: 100%;
+  max-width: var(--content-max-width);
+  padding: 0 var(--space-2) var(--space-4);
+  box-sizing: border-box;
+}
+
+.servers-header {
+  color: var(--color-text-primary);
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.filters {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+  padding: var(--space-2);
+  background-color: var(--color-surface);
+  border: 1px solid transparent;
+  border-radius: var(--card-border-radius);
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.filter-h2 {
+  margin: 0;
+  color: var(--color-text-secondary);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.servers-content {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}

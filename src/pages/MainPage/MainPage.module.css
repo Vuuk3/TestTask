@@ -1,35 +1,36 @@
 body {
-  background-color: #090D12;
+  background-color: var(--color-background);
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .start_block {
-  background-color: #111821;
-  border-radius: 8px;
+  background-color: var(--color-surface);
+  border-radius: var(--space-1);
   padding: 15px;
   margin-bottom: 30px;
 }
 
 .start_block-header-first, .start_block-header-second {
   font-size: 30px;
-  margin: 5px, 0;
+  margin-top: 5px;
+  margin-bottom: 10px;
 }
 
 .start_block-header-first {
-  color: #F4F7FA;
+  color: var(--color-text-primary);
 }
 
 .start_block-header-second {
-  color: #63F59A;
+  color: var(--color-accent);
 }
 
 .start_block-description {
   font-size: 20px;
   font-weight: 600;
   margin: 7px, 0;
-  color: #97A6B5;
+  color: var(--color-text-secondary);
 }
 
 .button_container {
@@ -39,6 +40,9 @@ body {
 }
 
 .main_button, .secondary_button {
+  display: flex;
+  text-decoration: none;
+  align-items: center;
   font-size: 16px;
   font-weight: 650;
   border: none;
@@ -46,6 +50,7 @@ body {
   padding: 5px;
   padding-left: 20px;
   padding-right: 20px;
+  min-height: var(--button-height);
 }
 
 .main_button:hover, .secondary_button:hover {
@@ -53,33 +58,33 @@ body {
 }
 
 .main_button {
-  color: #090D12;
-  background-color: #63F59A;
+  color: var(--color-background);
+  background-color: var(--color-accent);
 }
 
 .main_button:hover {
-  background-color: #54D083;
+  background-color: var(--color-accent-hover);
 }
 
 .main_button:active {
-  background-color: #45AC6C;
+  background-color: var(--color-accent-active);
 }
 
 .secondary_button {
-  color: #F4F7FA;
-  background-color: #18222E;
+  color: var(--color-text-primary);
+  background-color: var(--color-surface-secondary);
 }
 
 .secondary_button:hover {
-  background-color: #141D27;
+  background-color: var(--color-surface-hover);
 }
 
 .secondary_button:active {
-  background-color: #111820;
+  background-color: var(--color-surface-active);
 }
 
 .servers-h1, .modifications-h1 {
-  color: #F4F7FA;
+  color: var(--color-text-primary);
   font-size: 36px;
   font-weight: 600;
   margin-bottom: 10px;

@@ -35,3 +35,8 @@
 body {
   font-family: var(--font-family-primary);
 }
+
+#root {
+  width: 100%;
+  max-width: var(--content-max-width);
+}
