@@ -1,4 +1,5 @@
 import modules from "./ModificationCard.module.css";
+import { Link } from "react-router";
 
 function ModificationCard ({ data, extended = false }) {
   return <div className={modules.card}>
@@ -15,7 +16,7 @@ function ModificationCard ({ data, extended = false }) {
       <li className={modules.version}>Версия {data.version}</li>
       <li className={modules["minecraft-version"]}>Minecraft {data.minecraft_version}</li>
       <li className={modules.downloads}>{data.downloads.toLocaleString("en-US", {notation: "compact", roundingMode: "trunc", maximumFractionDigits: 1})} загрузок</li>
-      <button className={modules.more}>Подробнее</button>
+      <Link className={modules.more} to={`/mods/${data.id}`}>Подробнее</Link>
     </div>
   </div>
 }

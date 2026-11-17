@@ -1,0 +1,125 @@
+.page {
+  width: 100%;
+  max-width: var(--content-max-width);
+  padding: 0 var(--space-2) var(--space-4);
+  box-sizing: border-box;
+}
+
+.back-link {
+  display: inline-block;
+  position: relative;
+  margin-bottom: var(--space-2);
+  color: var(--color-info);
+  text-decoration: none;
+}
+
+.back-link::after,
+.more::after {
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-info);
+  content: "";
+  transition: width var(--transition-duration) ease-out;
+}
+
+.back-link:hover::after {
+  width: 100%;
+}
+
+.details,
+.not-found {
+  padding: var(--space-3);
+  color: var(--color-text-primary);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--card-border-radius);
+}
+
+.heading {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: var(--space-2);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.title {
+  margin: 0;
+  font-size: 36px;
+}
+
+.category {
+  margin: var(--space-1) 0 0;
+  color: var(--color-text-secondary);
+}
+
+.button {
+  min-height: var(--button-height);
+  padding: 0 var(--space-2);
+  color: var(--color-background);
+  background-color: var(--color-accent);
+  border: 1px solid var(--color-accent);
+  border-radius: 6px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity var(--transition-duration), background-color var(--transition-duration);
+}
+
+.button:hover:not(:disabled) {
+  opacity: .85;
+}
+
+.button:disabled {
+  color: var(--color-text-secondary);
+  background-color: var(--color-surface-secondary);
+  border-color: var(--color-border);
+  cursor: default;
+}
+
+.meta {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-1) var(--space-3);
+  margin: var(--space-3) 0;
+}
+
+.meta div {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-2);
+  padding-bottom: var(--space-1);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.meta dt {
+  color: var(--color-text-secondary);
+}
+
+.meta dd {
+  margin: 0;
+  font-weight: 700;
+}
+
+.section h2 {
+  margin: 0 0 var(--space-1-5);
+  font-size: 24px;
+}
+
+.section p {
+  margin: 0;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.not-found h1 {
+  margin-top: 0;
+}
+
+.not-found .back-link {
+  margin-bottom: 0;
+}
