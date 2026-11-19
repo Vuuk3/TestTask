@@ -110,7 +110,7 @@
   height: 2px;
   background-color: var(--color-info);
   content: "";
-  transition: width var(--transition-duration) ease-out;
+  transition: width var(--transition-duration);
 }
 
 .more:hover {

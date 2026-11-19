@@ -1,13 +1,29 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Menu from "../../components/Menu/Menu";
 import ModificationCard from "../../components/ModificationCard/ModificationCard";
 import SelectFilter from "../../components/SelectFilter/SelectFilter";
-import modifications from "../../data/modifications.js";
 import modules from "./ModificationsPage.module.css";
+import { getMods } from "../../api/mods.js";
 
 function ModificationsPage() {
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(false);
+  const [modifications, setModifications] = useState([]);
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("0");
+
+  useEffect(() => {
+    getMods()
+      .then((response) => {
+        setModifications(response.data)
+      })
+      .catch(() => {
+        setError(true)
+      })
+      .finally(() => {
+        setIsLoading(false)
+      })
+  }, [])
 
   const categories = ["Все", ...new Set(modifications.map((modification) => modification.category))]
 
@@ -17,8 +33,20 @@ function ModificationsPage() {
     return matchesSearch && matchesCategory
   })
 
+  if (isLoading) {
+    return <div>
+      <h1 className={modules.info}>Загрузка...</h1>
+    </div>
+  }
+
+  if (error) {
+    return <div>
+      <h1 className={modules.info}>Ошибка: не удалось загрузить данные</h1>
+    </div>
+  }
+
   return <main className={modules.page}>
-    <Menu />
+    <Menu setError={setError}/>
     <h1 className={modules.title}>Модификации</h1>
     <div className={modules.filters}>
       <label className={modules["search-group"]}>

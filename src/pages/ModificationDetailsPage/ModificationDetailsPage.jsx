@@ -1,23 +1,48 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router";
 import Menu from "../../components/Menu/Menu";
-import modifications from "../../data/modifications.js";
+import { getModById } from "../../api/mods.js";
 import modules from "./ModificationDetailsPage.module.css";
 
 function ModificationDetailsPage() {
   const { id } = useParams();
-  const modification = modifications.find((item) => item.id === Number(id));
-  const [isAdded, setIsAdded] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(false);
+  const [notFound, setNotFound] = useState(false);
+  const [modification, setModification] = useState(null);
 
-  const addToLibrary = () => {
-    if (isAdded) return;
+  useEffect(() => {
+    getModById(id)
+      .then((response) => {
+        setModification(response.data)
+      })
+      .catch((error) => {
+        if (error.status === 404) {
+          setNotFound(true)
+        } else {
+          setError(true)
+        }
+      })
+      .finally(() => {
+        setIsLoading(false)
+      })
+  }, [id])
 
-    setIsAdded(true);
+  if (isLoading) {
+    return <div>
+      <h1 className={modules.info}>Загрузка...</h1>
+    </div>
   }
 
-  if (!modification) {
+  if (error) {
+    return <div>
+      <h1 className={modules.info}>Ошибка: не удалось загрузить данные</h1>
+    </div>
+  }
+
+  if (notFound) {
     return <main className={modules.page}>
-      <Menu />
+      <Menu setError={setError} />
       <section className={modules["not-found"]}>
         <h1>Модификация не найдена</h1>
         <Link className={modules["back-link"]} to="/mods">Вернуться к модификациям</Link>
@@ -26,17 +51,12 @@ function ModificationDetailsPage() {
   }
 
   return <main className={modules.page}>
-    <Menu />
+    <Menu setError={setError} />
     <Link className={modules["back-link"]} to="/mods">Назад к модификациям</Link>
     <article className={modules.details}>
       <div className={modules.heading}>
-        <div>
-          <h1 className={modules.title}>{modification.name}</h1>
-          <p className={modules.category}>{modification.category}</p>
-        </div>
-        <button className={modules.button} type="button" onClick={addToLibrary} disabled={isAdded}>
-          {isAdded ? "В библиотеке" : "Добавить в библиотеку"}
-        </button>
+        <h1 className={modules.title}>{modification.name}</h1>
+        <p className={modules.category}>{modification.category}</p>
       </div>
       <dl className={modules.meta}>
         <div><dt>Автор</dt><dd>{modification.author}</dd></div>

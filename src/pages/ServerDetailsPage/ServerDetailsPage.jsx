@@ -1,15 +1,34 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, useParams } from "react-router";
 import Menu from "../../components/Menu/Menu";
-import servers from "../../data/servers.js";
+import { getServerById } from "../../api/server.js";
 import modules from "./ServerDetailsPage.module.css";
 
 function ServerDetailsPage() {
   const { id } = useParams();
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(false);
+  const [notFound, setNotFound] = useState(false);
+  const [server, setServer] = useState(null);
   const [ipCopied, setIpCopied] = useState(false);
   const copyTimer = useRef(null);
 
-  const server = servers.find((server) => server.id === Number(id));
+  useEffect(() => {
+    getServerById(id)
+      .then((response) => {
+        setServer(response.data)
+      })
+      .catch((error) => {
+        if (error.status === 404) {
+          setNotFound(true)
+        } else {
+          setError(true)
+        }
+      })
+      .finally(() => {
+        setIsLoading(false)
+      })
+  }, [id])
 
   useEffect(() => {
     return () => clearTimeout(copyTimer.current)
@@ -31,9 +50,21 @@ function ServerDetailsPage() {
     setIpCopied(false)
   }
 
-  if (!server) {
+  if (isLoading) {
+    return <div>
+      <h1 className={modules.info}>Загрузка...</h1>
+    </div>
+  }
+
+  if (error) {
+    return <div>
+      <h1 className={modules.info}>Ошибка: не удалось загрузить данные</h1>
+    </div>
+  }
+
+  if (notFound) {
     return <main className={modules.page}>
-      <Menu />
+      <Menu setError={setError} />
       <section className={modules["not-found"]}>
         <h1>Сервер не найден</h1>
         <Link className={modules["back-link"]} to="/servers">Вернуться к серверам</Link>
@@ -42,7 +73,7 @@ function ServerDetailsPage() {
   }
 
   return <main className={modules.page}>
-    <Menu />
+    <Menu setError={setError} />
     <Link className={modules["back-link"]} to="/servers">Назад к серверам</Link>
     <article className={modules.details}>
       <h1 className={modules.title}>{server.name}</h1>
