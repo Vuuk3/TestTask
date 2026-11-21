@@ -1,0 +1,354 @@
+.page {
+  width: 100%;
+  max-width: var(--content-max-width);
+  padding: 0 var(--space-2) var(--space-4);
+  box-sizing: border-box;
+}
+
+.info {
+  color: var(--color-text-primary);
+  font-size: 32px;
+}
+
+.title {
+  margin: 0 0 var(--space-3);
+  color: var(--color-text-primary);
+  font-size: 36px;
+  font-weight: 600;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr);
+  gap: var(--space-3);
+  align-items: start;
+}
+
+.profile-card,
+.section {
+  color: var(--color-text-primary);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--card-border-radius);
+}
+
+.profile-card {
+  position: sticky;
+  top: var(--space-2);
+  padding: var(--space-3);
+}
+
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 104px;
+  height: 104px;
+  margin: 0 auto var(--space-2);
+  color: var(--color-background);
+  background: linear-gradient(135deg, var(--color-accent), var(--color-info));
+  border-radius: 18px;
+  font-size: 32px;
+  font-weight: 800;
+}
+
+.identity {
+  text-align: center;
+}
+
+.identity h2 {
+  margin: 0;
+  font-size: 26px;
+}
+
+.identity p {
+  margin: 4px 0 var(--space-1);
+  color: var(--color-text-secondary);
+}
+
+.identity h2,
+.identity p,
+.details dd,
+.bio {
+  overflow-wrap: anywhere;
+}
+
+.status {
+  display: inline-block;
+  padding: 4px var(--space-1);
+  color: var(--color-accent);
+  border: 1px solid var(--color-accent);
+  border-radius: 14px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  margin: var(--space-3) 0;
+}
+
+.details div {
+  padding-bottom: var(--space-1);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.details dt {
+  margin-bottom: 3px;
+  color: var(--color-text-secondary);
+  font-size: 13px;
+}
+
+.details dd {
+  margin: 0;
+}
+
+.bio {
+  margin: 0;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.section {
+  padding: var(--space-3);
+}
+
+.section h2 {
+  margin: 0 0 var(--space-2);
+  font-size: 24px;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-2);
+}
+
+.form label {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  color: var(--color-text-secondary);
+}
+
+.form input,
+.form textarea {
+  width: 100%;
+  padding: var(--space-1) var(--space-2);
+  box-sizing: border-box;
+  color: var(--color-text-primary);
+  background-color: var(--color-surface-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  font: inherit;
+}
+
+.form input {
+  min-height: var(--button-height);
+}
+
+.form textarea {
+  resize: vertical;
+}
+
+.wide-field,
+.actions {
+  grid-column: 1 / -1;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: var(--button-height);
+}
+
+.actions button {
+  min-height: var(--button-height);
+  margin: 0;
+  padding: 0 var(--space-2);
+  color: var(--color-background);
+  background-color: var(--color-accent);
+  border: none;
+  border-radius: 6px;
+  font: inherit;
+  font-weight: 700;
+}
+
+.actions button:hover {
+  cursor: pointer;
+  background-color: var(--color-accent-hover);
+}
+
+.actions button:active {
+  background-color: var(--color-accent-active);
+}
+
+.actions span {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--button-height);
+  margin: 0;
+  padding: 0 var(--space-2);
+  box-sizing: border-box;
+  color: var(--color-accent);
+}
+
+.actions .save-error {
+  color: var(--color-error);
+}
+
+.skin-layout {
+  display: grid;
+  grid-template-columns: 160px minmax(0, 1fr);
+  gap: var(--space-3);
+  align-items: center;
+}
+
+.skin-preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 160px;
+  min-height: 210px;
+  color: var(--color-text-secondary);
+  background-color: var(--color-surface-secondary);
+  border: 1px dashed var(--color-border);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.skin-preview img {
+  display: block;
+  width: 100%;
+  height: 210px;
+  object-fit: contain;
+}
+
+.skin-control p {
+  margin: 0 0 var(--space-2);
+  color: var(--color-text-secondary);
+}
+
+.file-button {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--button-height);
+  padding: 0 var(--space-2);
+  color: var(--color-text-primary);
+  background-color: var(--color-surface-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+}
+
+.file-button:hover {
+  cursor: pointer;
+  border-color: var(--color-info);
+}
+
+.delete-skin {
+  min-height: var(--button-height);
+  margin-left: var(--space-1);
+  padding: 0 var(--space-2);
+  color: var(--color-error);
+  background-color: transparent;
+  border: 1px solid var(--color-error);
+  border-radius: 6px;
+  font: inherit;
+  font-weight: 700;
+}
+
+.delete-skin:hover {
+  cursor: pointer;
+  color: var(--color-background);
+  background-color: var(--color-error);
+}
+
+.delete-skin:active {
+  background-color: var(--color-error-active);
+  border-color: var(--color-error-active);
+}
+
+.file-button input {
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.error {
+  margin-top: var(--space-1);
+  color: var(--color-error);
+}
+
+.capes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-2);
+}
+
+.cape {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
+  gap: var(--space-2);
+  align-items: center;
+  padding: var(--space-1);
+  color: var(--color-text-primary);
+  background-color: var(--color-surface-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font: inherit;
+  text-align: left;
+}
+
+.cape:hover {
+  cursor: pointer;
+  border-color: var(--color-text-secondary);
+}
+
+.cape:has(.cape-radio:checked) {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 1px var(--color-accent);
+}
+
+.cape:has(.cape-radio:focus-visible) {
+  outline: 2px solid var(--color-info);
+  outline-offset: 2px;
+}
+
+.cape-radio {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.cape-preview {
+  display: block;
+  width: 56px;
+  height: 72px;
+  background-image: url("/cape-placeholder.png");
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: 540% 190%;
+  image-rendering: pixelated;
+}
+
+.cape-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cape-info small {
+  color: var(--color-text-secondary);
+  line-height: 1.35;
+}
+
