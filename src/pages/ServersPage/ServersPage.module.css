@@ -5,6 +5,11 @@
   box-sizing: border-box;
 }
 
+.info {
+  color: var(--color-text-primary);
+  font-size: 32px;
+}
+
 .servers-header {
   color: var(--color-text-primary);
   font-size: 36px;

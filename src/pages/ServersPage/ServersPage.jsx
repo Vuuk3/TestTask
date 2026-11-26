@@ -1,16 +1,32 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Menu from "../../components/Menu/Menu";
 import ServerCard from "../../components/ServerCard/ServerCard";
-import servers from "../../data/servers.js";
 import modules from "./ServersPage.module.css";
 import SelectFilter from "../../components/SelectFilter/SelectFilter.jsx";
+import { getServers } from "../../api/server.js";
 
 function ServersPage() {
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(false);
+  const [servers, setServers] = useState([]);
   const [statusFilter, setStatusFilter] = useState("all");
   const [sortOrder, setSortOrder] = useState("none");
 
-  const statusData = {"Все": "all", "Онлайн": "online", "Оффлайн": "offline"}
-  const orderData = {"Без сортировки": "none", "По убыванию": "desc", "По возрастанию": "asc"}
+  useEffect(() => {
+    getServers()
+      .then((response) => {
+        setServers(response.data)
+      })
+      .catch(() => {
+        setError(true)
+      })
+      .finally(() => {
+        setIsLoading(false)
+      })
+  }, [])
+
+  const statusData = {"all": "Все", "online": "Онлайн", "offline": "Оффлайн"}
+  const orderData = {"none": "Без сортировки", "desc": "По убыванию", "asc": "По возрастанию"}
 
   const filteredServers = servers.filter((server) => {
     if (statusFilter === "all") return true
@@ -21,9 +37,21 @@ function ServersPage() {
   const sortedServers = sortOrder === "none" ? filteredServers : filteredServers.toSorted((a, b) => a.players - b.players)
   const resultServers = sortOrder === "desc" ? sortedServers.toReversed() : sortedServers
 
+  if (isLoading) {
+    return <div>
+      <h1 className={modules.info}>Загрузка...</h1>
+    </div>
+  }
+
+  if (error) {
+    return <div>
+      <h1 className={modules.info}>Ошибка: не удалось загрузить данные</h1>
+    </div>
+  }
+
   return <>
     <main className={modules["servers-page"]}>
-      <Menu />
+      <Menu setError={setError}/>
       <h1 className={modules["servers-header"]}>Наши серверы</h1>
       <div className={modules.filters}>
         <div className={modules["filter-group"]}>
