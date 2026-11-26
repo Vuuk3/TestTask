@@ -8,6 +8,7 @@ import ModificationsPage from './pages/ModificationsPage/ModificationsPage.jsx'
 import ModificationDetailsPage from './pages/ModificationDetailsPage/ModificationDetailsPage.jsx'
 import LoginPage from './pages/LoginPage/LoginPage.jsx'
 import ProfilePage from './pages/ProfilePage/ProfilePage.jsx'
+import FriendsPage from './pages/FriendsPage/FriendsPage.jsx'
 
 
 createRoot(document.getElementById('root')).render(
@@ -20,6 +21,7 @@ createRoot(document.getElementById('root')).render(
        <Route path="/mods/:id" element={<ModificationDetailsPage/>}/>
        <Route path="/login" element={<LoginPage/>}/>
        <Route path="/profile" element={<ProfilePage/>}/>
+       <Route path="/friends" element={<FriendsPage/>}/>
     </Routes>
   </BrowserRouter>
 )

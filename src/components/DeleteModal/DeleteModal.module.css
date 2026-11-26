@@ -1,0 +1,79 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2);
+  background-color: rgb(0 0 0 / 70%);
+}
+
+.modal {
+  width: 100%;
+  max-width: 440px;
+  padding: var(--space-3);
+  box-sizing: border-box;
+  color: var(--color-text-primary);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--card-border-radius);
+}
+
+.modal h2 {
+  margin: 0 0 var(--space-1);
+  font-size: 24px;
+}
+
+.modal p {
+  margin: 0;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-1);
+  margin-top: var(--space-3);
+}
+
+.actions button {
+  min-height: var(--button-height);
+  padding: 0 var(--space-2);
+  border-radius: 6px;
+  font: inherit;
+  font-weight: 700;
+}
+
+.cancel {
+  color: var(--color-text-primary);
+  background-color: var(--color-surface-secondary);
+  border: 1px solid var(--color-border);
+}
+
+.cancel:hover {
+  cursor: pointer;
+  background-color: var(--color-surface-hover);
+}
+
+.cancel:active {
+  background-color: var(--color-surface-active);
+}
+
+.confirm {
+  color: var(--color-background);
+  background-color: var(--color-error);
+  border: 1px solid var(--color-error);
+}
+
+.confirm:hover {
+  cursor: pointer;
+  background-color: var(--color-error-active);
+  border-color: var(--color-error-active);
+}
+
+.confirm:active {
+  filter: brightness(80%);
+}

@@ -75,17 +75,17 @@
   border-radius: 6px;
   font: inherit;
   font-weight: 700;
-  cursor: pointer;
 }
 
 .logout:hover {
+  cursor: pointer;
   color: var(--color-background);
   background-color: var(--color-error);
 }
 
 .logout:active {
-  background-color: #cc515f;
-  border-color: #cc515f;
+  background-color: var(--color-error-active);
+  border-color: var(--color-error-active);
 }
 
 .logout:focus-visible {
