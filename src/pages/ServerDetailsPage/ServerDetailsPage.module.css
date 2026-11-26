@@ -91,11 +91,11 @@
   border-radius: 6px;
   font-size: 18px;
   font-weight: 700;
-  cursor: pointer;
   transition: color var(--transition-duration);
 }
 
 .ip:hover {
+  cursor: pointer;
   color: var(--color-info);
   border-color: var(--color-info);
 }
