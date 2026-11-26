@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router";
 import Menu from "../../components/Menu/Menu";
+import NotFoundMessage from "../../components/NotFoundMessage/NotFoundMessage.jsx";
 import { getModById } from "../../api/mods.js";
 import modules from "./ModificationDetailsPage.module.css";
 
@@ -43,10 +44,11 @@ function ModificationDetailsPage() {
   if (notFound) {
     return <main className={modules.page}>
       <Menu setError={setError} />
-      <section className={modules["not-found"]}>
-        <h1>Модификация не найдена</h1>
-        <Link className={modules["back-link"]} to="/mods">Вернуться к модификациям</Link>
-      </section>
+      <NotFoundMessage
+        message="Модификация не найдена"
+        backLink="/mods"
+        backLinkText="Вернуться к модификациям"
+      />
     </main>
   }
 

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, useParams } from "react-router";
 import Menu from "../../components/Menu/Menu";
+import NotFoundMessage from "../../components/NotFoundMessage/NotFoundMessage.jsx";
 import { getServerById } from "../../api/server.js";
 import modules from "./ServerDetailsPage.module.css";
 
@@ -65,10 +66,11 @@ function ServerDetailsPage() {
   if (notFound) {
     return <main className={modules.page}>
       <Menu setError={setError} />
-      <section className={modules["not-found"]}>
-        <h1>Сервер не найден</h1>
-        <Link className={modules["back-link"]} to="/servers">Вернуться к серверам</Link>
-      </section>
+      <NotFoundMessage
+        message="Сервер не найден"
+        backLink="/servers"
+        backLinkText="Вернуться к серверам"
+      />
     </main>
   }
 
