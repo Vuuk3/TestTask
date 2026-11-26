@@ -6,6 +6,7 @@ import { Link } from "react-router";
 import { useEffect, useState } from "react";
 import { getServers } from "../../api/server.js";
 import { getMods } from "../../api/mods.js";
+import { statistics } from "../../data/statistics.js";
 
 function MainPage() {
   const [isLoading, setIsLoading] = useState(true);
@@ -61,14 +62,44 @@ function MainPage() {
         </div>
       </div>
       <div className={modules.modifications}>
-        <h1 className={modules["modifications-h1"]}>Наши модификации</h1>
+        <h1 className={modules["modifications-h1"]}>Популярные модификации</h1>
         <div className={modules["modifications-content"]}>
           {
             modifications.slice(0, 4).map((modification) => (<ModificationCard key={modification.id} data={modification} />))
           }
         </div>
       </div>
+
+      <section className={modules.statistics}>
+        <h1 className={modules["statistics-h1"]}>Статистика проекта</h1>
+        <div className={modules["statistics-content"]}>
+          <div className={modules["statistics-card"]}>
+            <strong>{servers.length.toLocaleString("ru-RU")}</strong>
+            <span>Серверов</span>
+          </div>
+          <div className={modules["statistics-card"]}>
+            <strong>{statistics.onlinePlayers.toLocaleString("ru-RU")}</strong>
+            <span>Игроков онлайн</span>
+          </div>
+          <div className={modules["statistics-card"]}>
+            <strong>{modifications.length.toLocaleString("ru-RU")}</strong>
+            <span>Модификаций</span>
+          </div>
+          <div className={modules["statistics-card"]}>
+            <strong>{statistics.users.toLocaleString("ru-RU")}</strong>
+            <span>Пользователей</span>
+          </div>
+        </div>
+      </section>
     </main>
+
+    <footer className={modules.footer}>
+      <div>
+        <strong>FutureTech Minecraft</strong>
+        <span>Серверы, модификации и игровое сообщество в одном месте</span>
+      </div>
+      <p>© 2026 FutureTech Minecraft</p>
+    </footer>
   </div>
 }
 
