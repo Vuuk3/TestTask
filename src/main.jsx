@@ -9,6 +9,7 @@ import ModificationDetailsPage from './pages/ModificationDetailsPage/Modificatio
 import LoginPage from './pages/LoginPage/LoginPage.jsx'
 import ProfilePage from './pages/ProfilePage/ProfilePage.jsx'
 import FriendsPage from './pages/FriendsPage/FriendsPage.jsx'
+import NotFoundPage from './pages/NotFoundPage/NotFoundPage.jsx'
 
 
 createRoot(document.getElementById('root')).render(
@@ -22,6 +23,7 @@ createRoot(document.getElementById('root')).render(
        <Route path="/login" element={<LoginPage/>}/>
        <Route path="/profile" element={<ProfilePage/>}/>
        <Route path="/friends" element={<FriendsPage/>}/>
+       <Route path="*" element={<NotFoundPage/>}/>
     </Routes>
   </BrowserRouter>
 )
